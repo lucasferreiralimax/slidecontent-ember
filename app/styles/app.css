@@ -77,3 +77,18 @@ h3 svg {
   .app h1 { font-size: 2em; }
   .slide-title { font-size: 1em; }
 }
+
+.footer { padding: 3em 0; }
+.footer a {
+  align-items: center;
+  color: #000;
+  display: flex;
+  font-size: 1.5em;
+  justify-content: center;
+  text-decoration: none;
+}
+.footer svg { margin-right: .5em; }
+
+@media (max-width: 640px) {
+  .footer a { font-size: 1em; }
+}
