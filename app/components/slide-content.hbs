@@ -1,0 +1,11 @@
+<section class={{(concat "slide-content " @type)}}>
+  <div class="slides-slots">
+    {{yield}}
+  </div>
+  {{#if @nav}}
+    <div class="slide-navigation">
+      <button class="btn prev" type="button" name="button"></button>
+      <button class="btn next" type="button" name="button"></button>
+    </div>
+  {{/if}}
+</section>
