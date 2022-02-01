@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: Arial;
+  margin: 0;
+  margin: 0;
+  padding: 0;
+}
+
+code { font-family: 'Courier New', monospace; }
+
+.app-logo { pointer-events: none; }
+
+.app {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #2c3e50;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.app h1 { font-size: 3em; }
+
+.slide-title, h3 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.slide-title svg,
+h3 svg {
+  margin-right: .5em;
+}
+
+.slide-title {
+  border-top: 3px dashed #ccc;
+  color: #61DAFB;
+  font-size: 2em;
+  margin: 2em 0;
+  padding-top: 2em;
+}
+.slide-title svg { fill: #61DAFB; }
+.favela h1 { font-family: 'Great Vibes', cursive; }
+.favela img { filter: saturate(2) brightness(1.2); }
+
+@media (max-width: 640px) {
+  .app h1 { font-size: 2em; }
+  .slide-title { font-size: 1em; }
+}
