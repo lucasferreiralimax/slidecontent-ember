@@ -11,7 +11,12 @@ body {
 
 code { font-family: 'Courier New', monospace; }
 
-.app-logo { pointer-events: none; }
+.app-logo {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .app {
   -moz-osx-font-smoothing: grayscale;
@@ -23,6 +28,29 @@ code { font-family: 'Courier New', monospace; }
 }
 
 .app h1 { font-size: 3em; }
+
+#nav {
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav a {
+  padding: 1rem;
+  margin: 1rem;
+  background: #eee;
+  color: #2c3e50;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 100%;
+}
+#nav a.active {
+  background: #e04e39;
+  color: #fff;
+}
 
 .slide-title, h3 {
   align-items: center;
