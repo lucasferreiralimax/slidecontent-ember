@@ -12,15 +12,15 @@ module('Integration | Component | navigation', function (hooks) {
 
     await render(hbs`<Navigation />`);
 
-    assert.dom(this.element).hasText('');
+    assert.dom(this.element).hasText('Home Information');
 
     // Template block usage:
     await render(hbs`
       <Navigation>
-        template block text
+        Home Information
       </Navigation>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element).hasText('Home Information');
   });
 });

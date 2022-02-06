@@ -12,15 +12,15 @@ module('Integration | Component | header', function (hooks) {
 
     await render(hbs`<Header />`);
 
-    assert.dom(this.element).hasText('');
+    assert.dom(this.element).hasText('SlideContentEmber Home Information');
 
     // Template block usage:
     await render(hbs`
       <Header>
-        template block text
+        SlideContentEmber Home Information
       </Header>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element).hasText('SlideContentEmber Home Information');
   });
 });

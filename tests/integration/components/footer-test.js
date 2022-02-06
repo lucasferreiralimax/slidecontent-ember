@@ -12,15 +12,15 @@ module('Integration | Component | footer', function (hooks) {
 
     await render(hbs`<Footer />`);
 
-    assert.dom(this.element).hasText('');
+    assert.dom(this.element).hasText('SlideContentEmber - @lucasferreiralimax');
 
     // Template block usage:
     await render(hbs`
       <Footer>
-        template block text
+      SlideContentEmber - @lucasferreiralimax
       </Footer>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element).hasText('SlideContentEmber - @lucasferreiralimax');
   });
 });
