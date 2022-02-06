@@ -1,0 +1,14 @@
+god_faith: Fé em Deus
+title: SlideContentEmber
+city: Ermelino Matarazzo
+slide_infinity: Slide infinito
+slide_no_navigation: Slide sem navegação
+slide_fix_time: Slide com duração de 10 segundos
+to_left: Ir para a esquerda
+to_right: Ir para a direita
+source: Código Fonte
+not_found: 404 Nada encontrado
+about: Um slide de conteúdo simples desenvolvido em Ember com botões de navegação e um timer na animação de transição
+nav:
+  home: Inicio
+  about: Informações

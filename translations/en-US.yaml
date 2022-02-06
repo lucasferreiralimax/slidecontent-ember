@@ -1,0 +1,14 @@
+god_faith: Faith in God
+title: SlideContentEmber
+city: Ermelino Matarazzo
+slide_infinity: Slide infinity
+slide_no_navigation: Slide don't have navigation
+slide_fix_time: Slide time duration of 10 seconds
+to_left: Go to left
+to_right: Go to right
+source: Source code
+not_found: 404 Not Found
+about: A simple content slide developed in Ember with navigation buttons and a timer in the transition animation
+nav:
+  home: Home
+  about: Information
