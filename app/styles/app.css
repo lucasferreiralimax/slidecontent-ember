@@ -12,10 +12,12 @@ body {
 code { font-family: 'Courier New', monospace; }
 
 .app-logo {
+  color: #2c3e50;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
 }
 
 .app {
