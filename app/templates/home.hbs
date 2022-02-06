@@ -1,5 +1,3 @@
-<h2>Home</h2>
-
 <section class="example">
   <h2 class="slide-title">
     <svg width="60px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -8,7 +6,7 @@
     </svg>
     <span>Slide infinito</span>
   </h2>
-  <SlideContent @type="infinite" @nav={{true}}>
+  <SlideContent @type="infinite" @nav={{true}} @disabled={{true}}>
     <SlideItem @title="Ermelino Matarazzo" @img="assets/ermelino.jpg" @url="https://github.com/lucasferreiralimax/slidecontent-ember" @target="_blank" />
     <SlideItem @title="Favela" @img="assets/faveladascriancas.jpg" @url="https://github.com/lucasferreiralimax/slidecontent-vue" @target="_blank" />
   </SlideContent>
@@ -35,7 +33,7 @@
     </svg>
     <span>Slide com duração de 10 segundos</span>
   </h2>
-  <SlideContent @type="simple" @nav={{true}}>
+  <SlideContent @type="simple" @nav={{true}} @direction="prev" @time={{10000}}>
     <SlideItem @title="Ermelino Matarazzo" @img="assets/ermelino.jpg" @url="https://github.com/lucasferreiralimax/slidecontent-ember" @target="_blank" />
     <SlideItem @title="Favela" @img="assets/faveladascriancas.jpg" @url="https://github.com/lucasferreiralimax/slidecontent-vue" @target="_blank" />
   </SlideContent>
