@@ -29,6 +29,19 @@ code { font-family: 'Courier New', monospace; }
 
 .app h1 { font-size: 3em; }
 
+.languages button {
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.languages button.actived {
+  color: #fff;
+  background: #e04e39;
+  border: 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+
 #nav {
   display: flex;
   width: 100%;
