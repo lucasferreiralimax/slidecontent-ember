@@ -15,15 +15,15 @@ export default class SlideContentComponent extends Component {
       : e.querySelectorAll('button');
 
     if (e.target) {
-      this.intl.locale = e.target.textContent;
-      localStorage.setItem('language', e.target.textContent);
+      this.intl.locale = e.target.textContent.trim();
+      localStorage.setItem('language', e.target.textContent.trim());
     }
 
     for (let item of buttons) {
       if (item.classList.contains('actived')) {
         item.classList.remove('actived');
       }
-      if (item.textContent === this.intl.locale[0]) {
+      if (item.textContent.trim() === this.intl.locale[0]) {
         item.classList.add('actived');
       }
     }
