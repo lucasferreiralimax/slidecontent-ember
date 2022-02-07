@@ -10,5 +10,5 @@ source: Código Fonte
 not_found: 404 Nada encontrado
 about: Um slide de conteúdo simples desenvolvido em Ember com botões de navegação e um timer na animação de transição
 nav:
-  home: Inicio
+  home: Início
   about: Informações
