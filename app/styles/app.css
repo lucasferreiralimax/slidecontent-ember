@@ -25,24 +25,34 @@ code { font-family: 'Courier New', monospace; }
   -webkit-font-smoothing: antialiased;
   color: #2c3e50;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  margin-top: 60px;
   text-align: center;
 }
 
 .app h1 { font-size: 3em; }
 
+.languages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 .languages button {
+  flex: 1;
   margin: 0.5rem;
   cursor: pointer;
+  border: 0;
+  background: #eee;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 1), 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 .languages button.actived {
   color: #fff;
   background: #e04e39;
-  border: 0;
-  padding: 0.5rem;
-  border-radius: 5px;
 }
-
 
 #nav {
   display: flex;
@@ -54,17 +64,32 @@ code { font-family: 'Courier New', monospace; }
 }
 
 #nav a {
-  padding: 1rem;
-  margin: 1rem;
+  padding: 1rem 1.5rem 1rem 1rem;
+  margin: 0.5rem;
   background: #eee;
   color: #2c3e50;
   border-radius: 10px;
   text-decoration: none;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+#nav a svg {
+  width: 25px;
+  margin-right: 0.5rem;
+  outline: none;
+  fill: #2c3e50;
+}
+
 #nav a.active {
   background: #e04e39;
   color: #fff;
+}
+
+#nav a.active svg {
+  fill: #fff;
 }
 
 .slide-title, h3 {
@@ -106,19 +131,6 @@ h3 svg {
 
 @media (max-width: 640px) {
   .footer a { font-size: 1em; }
-}
-
-.language button {
-  margin: .5rem;
-  cursor: pointer
-}
-
-.language button.active {
-  color: #fff;
-  background: #e04e39;
-  border: 0;
-  padding: .5rem;
-  border-radius: 5px
 }
 
 .footer {
@@ -171,30 +183,6 @@ body {
   #app h1 {
       font-size:2em
   }
-}
-
-#nav {
-  display: flex;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center
-}
-
-#nav a {
-  padding: 1rem;
-  margin: 1rem;
-  background: #eee;
-  color: #2c3e50;
-  border-radius: 10px;
-  text-decoration: none;
-  width: 100%
-}
-
-#nav a.router-link-exact-active {
-  background: #e04e39;
-  color: #fff
 }
 
 .slide-content {
