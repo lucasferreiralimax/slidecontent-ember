@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import { action } from '@ember/object';
 
 export default class SlideContentComponent extends Component {
@@ -15,7 +15,7 @@ export default class SlideContentComponent extends Component {
       : e.querySelectorAll('button');
 
     if (e.target) {
-      this.intl.locale = e.target.textContent.trim();
+      this.intl.setLocale([e.target.textContent.trim()]);
       localStorage.setItem('language', e.target.textContent.trim());
     }
 
@@ -23,7 +23,7 @@ export default class SlideContentComponent extends Component {
       if (item.classList.contains('actived')) {
         item.classList.remove('actived');
       }
-      if (item.textContent.trim() === this.intl.locale[0]) {
+      if (item.textContent.trim() === this.intl.primaryLocale) {
         item.classList.add('actived');
       }
     }
