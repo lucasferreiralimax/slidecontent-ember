@@ -5,6 +5,7 @@
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+
   @media (width <= 640px) {
     flex-direction: column;
   }
@@ -22,7 +23,7 @@
     align-items: center;
     font-weight: bold;
     transition: .3s all;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, .06), 0 0 0 2px #fff;
+    box-shadow: 0 10px 10px rgb(0 0 0 / 6%), 0 0 0 2px #fff;
 
     @media (width <= 640px) {
       width: calc(100% - 60px);

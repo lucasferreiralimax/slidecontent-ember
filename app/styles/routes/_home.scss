@@ -3,13 +3,13 @@
 .example {
   padding-bottom: 6rem;
   padding-top: 2rem;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, .06);
+  box-shadow: 0 15px 25px rgb(0 0 0 / 6%);
 
   &:first-of-type {
     margin-top: 2rem;
     padding-top: 0;
     border-top: 1px solid #eee;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, .06), 0 -5px 15px rgba(0, 0, 0, .02);
+    box-shadow: 0 15px 25px rgb(0 0 0 / 6%), 0 -5px 15px rgb(0 0 0 / 2%);
   }
 }
 
@@ -28,6 +28,7 @@ h3 {
   padding: 2rem 0;
   color: #e04e39;
   font-size: 2em;
+
   @media (width <= 640px) {
     .slide-title {
       font-size: 1em;
