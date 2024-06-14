@@ -1,6 +1,5 @@
 .app-footer {
   padding: 3em 0;
-
   a {
     align-items: center;
     color: #000;
@@ -11,7 +10,6 @@
     flex-direction: column;
     width: max-content;
     margin: 0 auto;
-
     @media (width <= 640px) {
       font-size: 1em;
     }
