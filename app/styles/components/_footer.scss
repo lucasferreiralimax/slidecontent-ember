@@ -1,7 +1,5 @@
 .app-footer {
   padding: 3em 0;
-  margin-top: auto;
-
   a {
     align-items: center;
     color: #000;
@@ -10,17 +8,12 @@
     justify-content: center;
     text-decoration: none;
     flex-direction: column;
-
-    p {
-      margin: 0;
-    }
-
+    width: max-content;
+    margin: 0 auto;
     @media (width <= 640px) {
       font-size: 1em;
     }
   }
-
-  svg {
-    margin: 0.5em;
-  }
+  svg { margin: .5em; }
 }
+
