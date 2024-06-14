@@ -17,7 +17,9 @@ body {
   padding: 0;
 }
 
-code { font-family: 'Courier New', monospace; }
+code {
+  font-family: 'Courier New', monospace;
+}
 
 .app {
   -moz-osx-font-smoothing: grayscale;
@@ -28,6 +30,10 @@ code { font-family: 'Courier New', monospace; }
   min-height: 90vh;
   display: flex;
   flex-direction: column;
+}
+
+b {
+  font-weight: bold;
 }
 
 @import './components/_logo';
