@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../../assets/webfonts/fa-solid-900.woff2") format("woff2"), url("../../assets/webfonts/fa-solid-900.ttf") format("truetype");
+}
+
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -9,7 +17,9 @@ body {
   padding: 0;
 }
 
-code { font-family: 'Courier New', monospace; }
+code {
+  font-family: 'Courier New', monospace;
+}
 
 .app-logo {
   color: #2c3e50;
@@ -28,7 +38,9 @@ code { font-family: 'Courier New', monospace; }
   text-align: center;
 }
 
-.app h1 { font-size: 3em; }
+.app h1 {
+  font-size: 3em;
+}
 
 .languages button {
   flex: 1;
@@ -90,11 +102,13 @@ code { font-family: 'Courier New', monospace; }
   fill: #fff;
 }
 
-.slide-title, h3 {
+.slide-title,
+h3 {
   align-items: center;
   display: flex;
   justify-content: center;
 }
+
 .slide-title svg,
 h3 svg {
   margin-right: .5em;
@@ -107,16 +121,33 @@ h3 svg {
   margin: 2em 0;
   padding-top: 2em;
 }
-.slide-title svg { fill: #61DAFB; }
-.favela h1 { font-family: 'Great Vibes', cursive; }
-.favela img { filter: saturate(2) brightness(1.2); }
 
-@media (max-width: 640px) {
-  .app h1 { font-size: 2em; }
-  .slide-title { font-size: 1em; }
+.slide-title svg {
+  fill: #61DAFB;
 }
 
-.footer { padding: 3em 0; }
+.favela h1 {
+  font-family: 'Great Vibes', cursive;
+}
+
+.favela img {
+  filter: saturate(2) brightness(1.2);
+}
+
+@media (max-width: 640px) {
+  .app h1 {
+    font-size: 2em;
+  }
+
+  .slide-title {
+    font-size: 1em;
+  }
+}
+
+.footer {
+  padding: 3em 0;
+}
+
 .footer a {
   align-items: center;
   color: #000;
@@ -125,10 +156,15 @@ h3 svg {
   justify-content: center;
   text-decoration: none;
 }
-.footer svg { margin-right: .5em; }
+
+.footer svg {
+  margin-right: .5em;
+}
 
 @media (max-width: 640px) {
-  .footer a { font-size: 1em; }
+  .footer a {
+    font-size: 1em;
+  }
 }
 
 .footer {
@@ -146,7 +182,7 @@ h3 svg {
 
 @media (max-width: 640px) {
   .footer a {
-      font-size:1em
+    font-size: 1em
   }
 }
 
@@ -163,7 +199,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: #2c3e50;
-  font-family: Avenir,Helvetica,Arial,sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   margin-top: 60px;
   text-align: center
 }
@@ -179,7 +215,7 @@ body {
 
 @media (max-width: 640px) {
   #app h1 {
-      font-size:2em
+    font-size: 2em
   }
 }
 
@@ -198,75 +234,72 @@ body {
 
 .slide-navigation .btn {
   background: #fff;
-  border: 2px solid #000;
+  border: 1px solid #444;
   border-radius: 100%;
-  box-shadow: 0 0 0 2px hsla(0,0%,100%,.5),0 0 10px 10px rgba(0,0,0,.5);
+  box-shadow: 0 0 1px 1px #ffffff80, 0 0 10px 2px #0003;
   cursor: pointer;
   font-size: 0;
   font-weight: 700;
-  height: 60px;
+  height: 40px;
   outline: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  transition: all .3s;
+  transition: .3s all;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  width: 60px;
-  z-index: 1
+  width: 40px;
+  z-index: 1;
 }
 
 .slide-navigation .btn:hover {
-  background: #000;
-  box-shadow: 0 0 10px 10px hsla(0,0%,100%,.5);
-  color: #fff
+  background: #444;
+  border: 1px solid #fff;
+  box-shadow: 0 0 10px 10px #ffffff80;
+  color: #fff;
+  transform: translateY(-50%) scale(1.2);
 }
 
-.slide-navigation .btn:hover:after,.slide-navigation .btn:hover:before {
-  background: #fff
+.slide-navigation .btn:hover:after,
+.slide-navigation .btn:hover:before {
+  color: #fff;
 }
 
-.slide-navigation .btn:after,.slide-navigation .btn:before {
-  background: #000;
-  border-radius: 10px;
+.slide-navigation .btn:after,
+.slide-navigation .btn:before {
+  font-family: "Font Awesome 6 Free";
+  background: transparent;
   content: "";
   display: flex;
-  height: 50%;
-  width: 5px
+  color: #444;
+  font-size: 1.5rem;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transform: translate(5px);
 }
 
 .slide-navigation .prev {
-  left: 10px
+  left: 10px;
 }
 
 .slide-navigation .prev:active {
-  transform: translateY(-50%) translateX(10px)
+  transform: translate(-5px) translateY(-50%) scale(1.2);
 }
 
 .slide-navigation .prev:before {
-  transform: rotate(45deg) translate(17px,-10px)
-}
-
-.slide-navigation .prev:after {
-  transform: rotate(-45deg) translate(18px,10px)
+  content: "";
 }
 
 .slide-navigation .next {
-  right: 10px
+  right: 10px;
 }
 
 .slide-navigation .next:active {
-  transform: translateY(-50%) translateX(-10px)
+  transform: translate(5px) translateY(-50%) scale(1.2);
 }
 
 .slide-navigation .next:before {
-  transform: rotate(-45deg) translate(11px,19px)
-}
-
-.slide-navigation .next:after {
-  transform: rotate(45deg) translate(11px,-19px)
+  content: "";
 }
 
 .slide-item {
@@ -298,40 +331,48 @@ body {
   text-decoration: none
 }
 
-.slide-item a,.slide-item img {
+.slide-item a,
+.slide-item img {
   min-width: 100%
 }
 
 .slide-item h1 {
-  background: hsla(0,0%,100%,.7);
+  background: #fff3;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  text-shadow: 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff, 0 0 5px #fff;
+  box-shadow: 0 0 10px 5px #ffffff80;
   font-size: 2em;
   left: 50%;
-  padding: .5em;
+  padding: .5em 0;
+  margin: 0;
   position: absolute;
   text-align: center;
-  top: 1em;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%) translateY(-50%);
   width: 100%;
+  -webkit-user-select: none;
+  user-select: none;
   z-index: 1
 }
 
 @-webkit-keyframes opacityDelay {
   0% {
-      opacity: 0
+    opacity: 0
   }
 
   to {
-      opacity: 1
+    opacity: 1
   }
 }
 
 @keyframes opacityDelay {
   0% {
-      opacity: 0
+    opacity: 0
   }
 
   to {
-      opacity: 1
+    opacity: 1
   }
 }
 
@@ -364,13 +405,15 @@ body {
   background: green
 }
 
-.slide-title,h3 {
+.slide-title,
+h3 {
   align-items: center;
   display: flex;
   justify-content: center
 }
 
-.slide-title svg,h3 svg {
+.slide-title svg,
+h3 svg {
   margin-right: .5em
 }
 
@@ -384,7 +427,7 @@ body {
 
 @media (max-width: 640px) {
   .slide-title {
-      font-size:1em
+    font-size: 1em
   }
 }
 
@@ -393,7 +436,7 @@ body {
 }
 
 .favela h1 {
-  font-family: Great Vibes,cursive
+  font-family: Great Vibes, cursive
 }
 
 .favela img {
