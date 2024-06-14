@@ -16,6 +16,14 @@ body {
   font-family: Arial;
   margin: 0;
   padding: 0;
+  &:before,
+  &:after {
+    content: "";
+    display: flex;
+    height: 20px;
+    background: #e04e39;
+    box-shadow: 0 0 0 1px #fff, 0 0 20px rgba(0,0,0,.4);
+  }
 }
 
 code {
