@@ -1,0 +1,21 @@
+.language {
+  button {
+    flex: 1;
+    margin: 0.5rem;
+    cursor: pointer;
+    border: 0;
+    background: #eee;
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 1), 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 0;
+    &.actived {
+      color: #fff;
+      background: #2c3e50;
+    }
+  }
+  img {
+    width: 20px;
+    pointer-events: none;
+  }
+}

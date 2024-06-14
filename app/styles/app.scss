@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../assets/webfonts/fa-solid-900.woff2") format("woff2"), url("../assets/webfonts/fa-solid-900.ttf") format("truetype");
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: Arial;
+  margin: 0;
+  margin: 0;
+  padding: 0;
+}
+
+code { font-family: 'Courier New', monospace; }
+
+.app {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #2c3e50;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  text-align: center;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@import './components/_logo';
+@import './components/_language';
+@import './components/_navigation';
+@import './components/_slide-item';
+@import './components/_slide-content';
+@import './components/_app-version';
+@import './components/_footer';
+
+@import './routes/_about';
+@import './routes/_home';
