@@ -1,26 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* Importação de fonte externa */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
+/* Definição de font-face para Font Awesome */
 @font-face {
-  font-family: 'Font Awesome 6 Free';
+  font-family: "Font Awesome 6 Free";
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("../../assets/webfonts/fa-solid-900.woff2") format("woff2"), url("../../assets/webfonts/fa-solid-900.ttf") format("truetype");
+  src:
+    url("../../assets/webfonts/fa-solid-900.woff2") format("woff2"),
+    url("../../assets/webfonts/fa-solid-900.ttf") format("truetype");
 }
 
+/* Estilos globais */
 body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: Arial;
-  margin: 0;
   margin: 0;
   padding: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: Arial, sans-serif; /* Fonte principal com fallback genérico */
 }
 
 code {
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
+/* Estilos para o logotipo da aplicação */
 .app-logo {
   color: #2c3e50;
   cursor: pointer;
@@ -30,11 +35,10 @@ code {
   text-decoration: none;
 }
 
+/* Estilos para a aplicação em geral */
 .app {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   color: #2c3e50;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
 }
 
@@ -42,6 +46,138 @@ code {
   font-size: 3em;
 }
 
+/* Estilos específicos para o conteúdo da aplicação */
+#app {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #2c3e50;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  margin-top: 60px;
+  text-align: center;
+}
+
+#app .logo {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+.favela h1 {
+  font-family: "Great Vibes", cursive;
+}
+
+.slide-item h1 {
+  background: #fff3;
+  backdrop-filter: blur(5px);
+  text-shadow:
+    1px 1px #fff,
+    -1px -1px #fff,
+    1px -1px #fff,
+    -1px 1px #fff,
+    0 0 5px #fff;
+  box-shadow: 0 0 10px 5px #ffffff80;
+  font-size: 2em;
+  left: 50%;
+  padding: 0.5em 0;
+  margin: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%) translateY(-50%);
+  width: 100%;
+  user-select: none;
+  z-index: 1;
+}
+
+.slide-item.actived h1 {
+  animation: opacity-delay 3s;
+}
+
+#app h1 {
+  font-size: 3em;
+}
+
+@media (max-width: 640px) { /* stylelint-disable-line */
+  #app h1 {
+    font-size: 2em;
+  }
+}
+
+/* Estilos para .slide-title e h3 */
+h3,
+.slide-title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+h3 svg,
+.slide-title svg {
+  margin-right: 0.5em;
+}
+
+.slide-title {
+  border-top: 3px dashed #ccc;
+  color: #e04e39;
+  font-size: 2em;
+  margin: 2em 0;
+  padding-top: 2em;
+}
+
+@media (max-width: 640px) { /* stylelint-disable-line */
+  .slide-title {
+    font-size: 1em;
+  }
+}
+
+.slide-title svg {
+  fill: #e04e39;
+}
+
+.favela img {
+  filter: saturate(2) brightness(1.2);
+}
+
+/* Estilos para o rodapé */
+.footer {
+  padding: 3em 0;
+}
+
+.footer a {
+  align-items: center;
+  color: #000;
+  display: flex;
+  font-size: 1.5em;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.footer svg {
+  margin-right: 0.5em;
+}
+
+/* Animação de opacidade com delay */
+@keyframes opacity-delay {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Keyframes corrigido */
+@keyframes opacity-delay {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Estilos para os botões de linguagem */
 .languages button {
   flex: 1;
   margin: 0.5rem;
@@ -50,7 +186,9 @@ code {
   background: #eee;
   padding: 0.5rem;
   border-radius: 5px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 1), 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 100%),
+    0 2px 5px rgb(0 0 0 / 20%);
   font-size: 0;
 }
 
@@ -64,6 +202,7 @@ code {
   background: #2c3e50;
 }
 
+/* Estilos para a navegação */
 #nav {
   display: flex;
   width: 100%;
@@ -71,6 +210,16 @@ code {
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+}
+
+.slide-item a {
+  color: #000;
+  text-decoration: none;
+}
+
+.slide-item a,
+.slide-item img {
+  min-width: 100%;
 }
 
 #nav a {
@@ -102,123 +251,7 @@ code {
   fill: #fff;
 }
 
-.slide-title,
-h3 {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.slide-title svg,
-h3 svg {
-  margin-right: .5em;
-}
-
-.slide-title {
-  border-top: 3px dashed #ccc;
-  color: #61DAFB;
-  font-size: 2em;
-  margin: 2em 0;
-  padding-top: 2em;
-}
-
-.slide-title svg {
-  fill: #61DAFB;
-}
-
-.favela h1 {
-  font-family: 'Great Vibes', cursive;
-}
-
-.favela img {
-  filter: saturate(2) brightness(1.2);
-}
-
-@media (max-width: 640px) {
-  .app h1 {
-    font-size: 2em;
-  }
-
-  .slide-title {
-    font-size: 1em;
-  }
-}
-
-.footer {
-  padding: 3em 0;
-}
-
-.footer a {
-  align-items: center;
-  color: #000;
-  display: flex;
-  font-size: 1.5em;
-  justify-content: center;
-  text-decoration: none;
-}
-
-.footer svg {
-  margin-right: .5em;
-}
-
-@media (max-width: 640px) {
-  .footer a {
-    font-size: 1em;
-  }
-}
-
-.footer {
-  padding: 3em 0
-}
-
-.footer a {
-  align-items: center;
-  color: #000;
-  display: flex;
-  font-size: 1.5em;
-  justify-content: center;
-  text-decoration: none
-}
-
-@media (max-width: 640px) {
-  .footer a {
-    font-size: 1em
-  }
-}
-
-.footer svg {
-  margin-right: .5em
-}
-
-body {
-  margin: 0;
-  padding: 0
-}
-
-#app {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  color: #2c3e50;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  margin-top: 60px;
-  text-align: center
-}
-
-#app .logo {
-  text-decoration: none;
-  color: #2c3e50
-}
-
-#app h1 {
-  font-size: 3em
-}
-
-@media (max-width: 640px) {
-  #app h1 {
-    font-size: 2em
-  }
-}
-
+/* Estilos para o conteúdo dos slides */
 .slide-content {
   border-radius: 15px;
   box-sizing: border-box;
@@ -229,14 +262,17 @@ body {
   min-height: 300px;
   overflow: hidden;
   position: relative;
-  width: calc(100% - 20px)
+  width: calc(100% - 20px);
 }
 
+/* Estilos para a navegação dos slides */
 .slide-navigation .btn {
   background: #fff;
   border: 1px solid #444;
   border-radius: 100%;
-  box-shadow: 0 0 1px 1px #ffffff80, 0 0 10px 2px #0003;
+  box-shadow:
+    0 0 1px 1px #ffffff80,
+    0 0 10px 2px #0003;
   cursor: pointer;
   font-size: 0;
   font-weight: 700;
@@ -245,29 +281,15 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  transition: .3s all;
-  -webkit-user-select: none;
+  transition: 0.3s all;
   user-select: none;
   width: 40px;
   z-index: 1;
 }
 
-.slide-navigation .btn:hover {
-  background: #444;
-  border: 1px solid #fff;
-  box-shadow: 0 0 10px 10px #ffffff80;
-  color: #fff;
-  transform: translateY(-50%) scale(1.2);
-}
-
-.slide-navigation .btn:hover:after,
-.slide-navigation .btn:hover:before {
-  color: #fff;
-}
-
-.slide-navigation .btn:after,
-.slide-navigation .btn:before {
-  font-family: "Font Awesome 6 Free";
+.slide-navigation .btn::after,
+.slide-navigation .btn::before {
+  font-family: "Font Awesome 6 Free", sans-serif;
   background: transparent;
   content: "";
   display: flex;
@@ -278,6 +300,19 @@ body {
   transform: translate(5px);
 }
 
+.slide-navigation .btn:hover {
+  background: #444;
+  border: 1px solid #fff;
+  box-shadow: 0 0 10px 10px #ffffff80;
+  color: #fff;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.slide-navigation .btn:hover::after,
+.slide-navigation .btn:hover::before {
+  color: #fff;
+}
+
 .slide-navigation .prev {
   left: 10px;
 }
@@ -286,7 +321,7 @@ body {
   transform: translate(-5px) translateY(-50%) scale(1.2);
 }
 
-.slide-navigation .prev:before {
+.slide-navigation .prev::before {
   content: "";
 }
 
@@ -298,147 +333,23 @@ body {
   transform: translate(5px) translateY(-50%) scale(1.2);
 }
 
-.slide-navigation .next:before {
+.slide-navigation .next::before {
   content: "";
 }
 
+/* Estilos para os itens dos slides */
 .slide-item {
   align-items: center;
-  bottom: 0;
+  inset: 0;
   display: flex;
   height: 100%;
   justify-content: center;
-  left: 0;
   opacity: 0;
   position: absolute;
-  right: 0;
-  top: 0;
-  transition: .3s
+  transition: 0.3s;
 }
 
 .slide-item.actived {
   opacity: 1;
-  z-index: 1
-}
-
-.slide-item.actived h1 {
-  -webkit-animation: opacityDelay 3s;
-  animation: opacityDelay 3s
-}
-
-.slide-item a {
-  color: #000;
-  text-decoration: none
-}
-
-.slide-item a,
-.slide-item img {
-  min-width: 100%
-}
-
-.slide-item h1 {
-  background: #fff3;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  text-shadow: 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff, 0 0 5px #fff;
-  box-shadow: 0 0 10px 5px #ffffff80;
-  font-size: 2em;
-  left: 50%;
-  padding: .5em 0;
-  margin: 0;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  transform: translate(-50%) translateY(-50%);
-  width: 100%;
-  -webkit-user-select: none;
-  user-select: none;
-  z-index: 1
-}
-
-@-webkit-keyframes opacityDelay {
-  0% {
-    opacity: 0
-  }
-
-  to {
-    opacity: 1
-  }
-}
-
-@keyframes opacityDelay {
-  0% {
-    opacity: 0
-  }
-
-  to {
-    opacity: 1
-  }
-}
-
-.source h3 {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none
-}
-
-.source pre {
-  background: #000;
-  box-sizing: border-box;
-  color: green;
-  font-size: 1.2em;
-  margin: 0 auto;
-  max-width: 1000px;
-  overflow-x: auto;
-  padding: 2em;
-  text-align: left
-}
-
-.source pre::-moz-selection {
-  color: #fff;
-  background: green
-}
-
-.source pre::selection {
-  color: #fff;
-  background: green
-}
-
-.slide-title,
-h3 {
-  align-items: center;
-  display: flex;
-  justify-content: center
-}
-
-.slide-title svg,
-h3 svg {
-  margin-right: .5em
-}
-
-.slide-title {
-  border-top: 3px dashed #ccc;
-  color: #e04e39;
-  font-size: 2em;
-  margin: 2em 0;
-  padding-top: 2em
-}
-
-@media (max-width: 640px) {
-  .slide-title {
-    font-size: 1em
-  }
-}
-
-.slide-title svg {
-  fill: #e04e39
-}
-
-.favela h1 {
-  font-family: Great Vibes, cursive
-}
-
-.favela img {
-  filter: saturate(2) brightness(1.2)
+  z-index: 1;
 }
