@@ -16,14 +16,15 @@ body {
   font-family: Arial;
   margin: 0;
   padding: 0;
-  &:before,
-  &:after {
+
+  &::before,
+  &::after {
     content: "";
     display: flex;
     height: 20px;
     background: #e04e39;
     background: linear-gradient(90deg, #e04e39 50%, #f19100 100%);
-    box-shadow: 0 0 0 1px #fff, 0 0 20px rgba(0,0,0,.4);
+    box-shadow: 0 0 0 1px #fff, 0 0 20px rgb(0 0 0 / 40%);
   }
 }
 
