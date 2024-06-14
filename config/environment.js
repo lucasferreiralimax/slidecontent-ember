@@ -1,5 +1,7 @@
 'use strict';
 
+const pkg = require('../package.json');
+
 module.exports = function (environment) {
   const ENV = {
     modulePrefix: 'slidecontent-ember',
@@ -12,6 +14,7 @@ module.exports = function (environment) {
         // Here you can enable experimental features on an ember canary build
         // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
       },
+      APP_VERSION: pkg.version,
     },
 
     APP: {
