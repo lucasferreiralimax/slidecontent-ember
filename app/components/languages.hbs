@@ -1,26 +1,12 @@
 <section class="language" {{did-insert this.changeLocale}}>
-  <button type="button" {{on "click" this.changeLocale}}>
-    <img src="assets/flags/pt-BR.svg" alt="pt-BR"/>
-    pt-br
-  </button>
-  <button type="button" {{on "click" this.changeLocale}}>
-    <img src="assets/flags/en-US.svg" alt="en-US"/>
-    en-us
-  </button>
-  <button type="button" {{on "click" this.changeLocale}}>
-    <img src="assets/flags/es-ES.svg" alt="es-ES"/>
-    es-es
-  </button>
-  <button type="button" {{on "click" this.changeLocale}}>
-    <img src="assets/flags/fr-FR.svg" alt="fr-FR"/>
-    fr-fr
-  </button>
-  <button type="button" {{on "click" this.changeLocale}}>
-    <img src="assets/flags/ru-RU.svg" alt="ru-RU"/>
-    ru-ru
-  </button>
-  <button type="button" {{on "click" this.changeLocale}}>
-    <img src="assets/flags/zh-CN.svg" alt="zh-CN"/>
-    zh-cn
-  </button>
+  {{#each this.languages as | language|}}
+    <button
+      type="button"
+      class="{{if (eq language this.intl.primaryLocale) "actived" }}"
+      {{on "click" (fn this.changeLocale language)}}
+    >
+      <img src="assets/flags/{{language}}.svg" alt="Flag {{language}}" />
+      {{language}}
+    </button>
+  {{/each}}
 </section>

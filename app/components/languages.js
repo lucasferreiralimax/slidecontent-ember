@@ -3,29 +3,13 @@ import { service } from '@ember/service';
 import { action } from '@ember/object';
 
 export default class SlideContentComponent extends Component {
-  constructor(...args) {
-    super(...args);
-  }
-
   @service intl;
+  languages = ['pt-BR', 'en-US', 'es-ES', 'fr-FR', 'ru-RU', 'zh-CN'];
 
-  @action changeLocale(e) {
-    const buttons = e.target
-      ? e.target.parentElement.querySelectorAll('button')
-      : e.querySelectorAll('button');
-
-    if (e.target) {
-      this.intl.setLocale([e.target.textContent.trim()]);
-      localStorage.setItem('language', e.target.textContent.trim());
-    }
-
-    for (let item of buttons) {
-      if (item.classList.contains('actived')) {
-        item.classList.remove('actived');
-      }
-      if (item.textContent.trim() === this.intl.primaryLocale) {
-        item.classList.add('actived');
-      }
+  @action changeLocale(language) {
+    if (typeof language === "string") {
+      this.intl.setLocale([language]);
+      localStorage.setItem('language', language);
     }
   }
 }
