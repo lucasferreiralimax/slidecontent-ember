@@ -7,7 +7,7 @@ export default class SlideContentComponent extends Component {
   languages = ['pt-BR', 'en-US', 'es-ES', 'fr-FR', 'ru-RU', 'zh-CN'];
 
   @action changeLocale(language) {
-    if (typeof language === "string") {
+    if (typeof language === 'string') {
       this.intl.setLocale([language]);
       localStorage.setItem('language', language);
     }
