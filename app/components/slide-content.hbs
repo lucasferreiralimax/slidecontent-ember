@@ -1,11 +1,15 @@
-<section class={{concat "slide-content " @type}} {{did-insert this.slideAnimation}}>
+<section
+  class={{concat "slide-content " @type}}
+  {{did-insert this.initializeAnimation}}
+  {{will-destroy this.destroyAnimation}}
+>
   <div class="slides-slots">
     {{yield}}
   </div>
   {{#if @nav}}
     <div class="slide-navigation">
-      <button {{on "click" this.nextHandler}} class="btn prev" type="button" name="button"></button>
-      <button {{on "click" this.nextHandler}} class="btn next" type="button" name="button"></button>
+      <button {{on "click" this.prevHandler}} class="btn prev" type="button" name="button">{{t "to_left"}}</button>
+      <button {{on "click" this.nextHandler}} class="btn next" type="button" name="button">{{t "to_right"}}</button>
     </div>
   {{/if}}
 </section>

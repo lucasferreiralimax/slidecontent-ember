@@ -1,69 +1,92 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
+import { later, cancel } from '@ember/runloop';
 
 export default class SlideContentComponent extends Component {
-  constructor(...args) {
-    super(...args);
+  @tracked slideAnimationInitial = null;
+  @tracked slideAnimationOptions = null;
+
+  element = null;
+
+  @action
+  initializeAnimation(element) {
+    this.element = element;
+    this.startSlideAnimation();
   }
 
-  @action slideAnimation(e) {
-    let slideAnimationInitial = setInterval(() => {
-      this.nextHandler(e);
-    }, 6000);
+  @action
+  destroyAnimation() {
+    this.stopSlideAnimation();
+  }
 
-    slideAnimationInitial;
+  startSlideAnimation() {
+    this.slideAnimationInitial = later(
+      this,
+      () => {
+        this.nextHandler();
+        this.startSlideAnimation();
+      },
+      6000,
+    );
 
     if (this.args.direction && this.args.time) {
-      clearInterval(slideAnimationInitial);
-      let slideAnimationOptions = setInterval(() => {
-        this.args.direction == 'prev'
-          ? this.prevHandler(e)
-          : this.nextHandler(e);
-      }, Number(this.args.time));
+      cancel(this.slideAnimationInitial);
+      this.slideAnimationOptions = later(
+        this,
+        () => {
+          this.args.direction === 'prev'
+            ? this.prevHandler()
+            : this.nextHandler();
+          this.startSlideAnimation();
+        },
+        Number(this.args.time),
+      );
 
-      if (this.disabled) {
-        clearInterval(slideAnimationOptions);
-      } else {
-        slideAnimationOptions;
+      if (this.args.disabled) {
+        cancel(this.slideAnimationOptions);
       }
     }
   }
 
-  @action nextHandler(e) {
-    const slides = e.target
-      ? e.target.parentElement.parentElement.querySelectorAll('.slide-item')
-      : e.querySelectorAll('.slide-item');
-
-    for (let item of slides) {
-      if (item.classList.contains('actived')) {
-        if (item.nextElementSibling) {
-          item.classList.remove('actived');
-          item.nextElementSibling.classList.add('actived');
-          break;
-        } else {
-          item.classList.remove('actived');
-          slides[0].classList.add('actived');
-        }
-      }
+  stopSlideAnimation() {
+    if (this.slideAnimationInitial) {
+      cancel(this.slideAnimationInitial);
+    }
+    if (this.slideAnimationOptions) {
+      cancel(this.slideAnimationOptions);
     }
   }
 
-  @action prevHandler(e) {
-    const slides = e.target
-      ? e.target.parentElement.parentElement.querySelectorAll('.slide-item')
-      : e.querySelectorAll('.slide-item');
+  @action
+  prevHandler() {
+    this.changeSlide('prev');
+  }
 
-    for (let item of slides) {
+  @action
+  nextHandler() {
+    this.changeSlide('next');
+  }
+
+  changeSlide(direction) {
+    if (!this.element) return;
+
+    const slides = this.element.querySelectorAll('.slide-item');
+    let activeSlide;
+
+    slides.forEach((item, index) => {
       if (item.classList.contains('actived')) {
-        if (item.previousElementSibling) {
-          item.classList.remove('actived');
-          item.previousElementSibling.classList.add('actived');
-        } else {
-          item.classList.remove('actived');
-          slides[slides.length - 1].classList.add('actived');
-        }
-        break;
+        item.classList.remove('actived');
+        activeSlide = index;
       }
+    });
+
+    if (direction === 'next') {
+      const nextIndex = (activeSlide + 1) % slides.length;
+      slides[nextIndex].classList.add('actived');
+    } else {
+      const prevIndex = (activeSlide - 1 + slides.length) % slides.length;
+      slides[prevIndex].classList.add('actived');
     }
   }
 }
