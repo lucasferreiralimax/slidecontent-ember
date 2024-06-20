@@ -47,7 +47,7 @@
     "ember-cli-sass": "^11.0.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
-    "ember-data": "^5.3.4",
+    "ember-data": "^5.3.6",
     "ember-fetch": "^8.1.2",
     "ember-intl": "^7.0.2",
     "ember-load-initializers": "^2.1.2",
@@ -69,11 +69,11 @@
     "prettier": "^3.3.1",
     "qunit": "^2.21.0",
     "qunit-dom": "^2.0.0",
-    "sass": "^1.77.5",
+    "sass": "^1.77.6",
     "stylelint": "^16.6.1",
     "stylelint-config-standard-scss": "^13.1.0",
     "tracked-built-ins": "^3.3.0",
-    "webpack": "^5.91.0"
+    "webpack": "^5.92.1"
   },
   "engines": {
     "node": ">= 18"
