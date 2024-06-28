@@ -1,8 +1,8 @@
-<section class="language" {{did-insert this.changeLocale}}>
-  {{#each this.languages as | language|}}
+<section class="language" {{change-locale this.changeLocale this.cleanupLocale}}>
+  {{#each this.languages as |language|}}
     <button
       type="button"
-      class="{{if (eq language this.intl.primaryLocale) "actived" }}"
+      class="{{if (eq language this.intl.primaryLocale) "actived"}}"
       {{on "click" (fn this.changeLocale language)}}
     >
       <img src="assets/flags/{{language}}.svg" alt="Flag {{language}}" />

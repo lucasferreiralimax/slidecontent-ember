@@ -1,7 +1,7 @@
 <section
   class={{concat "slide-content " @type}}
-  {{did-insert this.initializeAnimation}}
-  {{will-destroy this.destroyAnimation}}
+  {{initialize-animation this.initializeAnimation}}
+  {{destroy-animation this.destroyAnimation}}
 >
   <div class="slides-slots">
     {{yield}}
