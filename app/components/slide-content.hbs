@@ -11,5 +11,13 @@
       <button {{on "click" this.prevHandler}} class="btn prev" type="button" name="button">{{t "to_left"}}</button>
       <button {{on "click" this.nextHandler}} class="btn next" type="button" name="button">{{t "to_right"}}</button>
     </div>
+    <div class="slide-bullets">
+      {{#each this.slides as |slide index|}}
+        <button
+          class={{if (eq index this.activeSlideIndex) "bullet active" "bullet"}}
+          {{on "click" (fn this.bulletHandler index)}}
+        ></button>
+      {{/each}}
+    </div>
   {{/if}}
 </section>
