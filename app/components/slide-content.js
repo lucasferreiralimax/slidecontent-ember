@@ -6,12 +6,23 @@ import { later, cancel } from '@ember/runloop';
 export default class SlideContentComponent extends Component {
   @tracked slideAnimationInitial = null;
   @tracked slideAnimationOptions = null;
+  @tracked activeSlideIndex = 0;
+  @tracked slides = [];
 
   element = null;
 
   @action
   initializeAnimation(element) {
     this.element = element;
+    this.slides = Array.from(element.querySelectorAll('.slide-item'));
+
+    // Initialize activeSlideIndex based on the element with the 'actived' class
+    this.slides.forEach((slide, index) => {
+      if (slide.classList.contains('actived')) {
+        this.activeSlideIndex = index;
+      }
+    });
+
     this.startSlideAnimation();
   }
 
@@ -68,10 +79,15 @@ export default class SlideContentComponent extends Component {
     this.changeSlide('next');
   }
 
+  @action
+  bulletHandler(index) {
+    this.updateActiveSlide(index);
+  }
+
   changeSlide(direction) {
     if (!this.element) return;
 
-    const slides = this.element.querySelectorAll('.slide-item');
+    const slides = this.slides;
     let activeSlide;
 
     slides.forEach((item, index) => {
@@ -84,9 +100,18 @@ export default class SlideContentComponent extends Component {
     if (direction === 'next') {
       const nextIndex = (activeSlide + 1) % slides.length;
       slides[nextIndex].classList.add('actived');
+      this.activeSlideIndex = nextIndex;
     } else {
       const prevIndex = (activeSlide - 1 + slides.length) % slides.length;
       slides[prevIndex].classList.add('actived');
+      this.activeSlideIndex = prevIndex;
     }
+  }
+
+  updateActiveSlide(index) {
+    this.slides.forEach((slide, i) => {
+      slide.classList.toggle('actived', i === index);
+    });
+    this.activeSlideIndex = index;
   }
 }
