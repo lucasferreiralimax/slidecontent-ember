@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-import { later, cancel } from '@ember/runloop';
+import { runTask, cancelTask } from 'ember-lifeline';
 
 export default class SlideContentComponent extends Component {
   @tracked slideAnimationInitial = null;
@@ -10,6 +10,7 @@ export default class SlideContentComponent extends Component {
   @tracked slides = [];
 
   element = null;
+  destroyToken = null;
 
   @action
   initializeAnimation(element) {
@@ -32,9 +33,12 @@ export default class SlideContentComponent extends Component {
   }
 
   startSlideAnimation() {
-    this.slideAnimationInitial = later(
+    if (this.isDestroyed || this.isDestroying) return;
+
+    this.slideAnimationInitial = runTask(
       this,
       () => {
+        if (this.isDestroyed || this.isDestroying) return;
         this.nextHandler();
         this.startSlideAnimation();
       },
@@ -42,10 +46,13 @@ export default class SlideContentComponent extends Component {
     );
 
     if (this.args.direction && this.args.time) {
-      cancel(this.slideAnimationInitial);
-      this.slideAnimationOptions = later(
+      if (this.destroyToken) {
+        cancelTask(this.destroyToken);
+      }
+      this.destroyToken = runTask(
         this,
         () => {
+          if (this.isDestroyed || this.isDestroying) return;
           this.args.direction === 'prev'
             ? this.prevHandler()
             : this.nextHandler();
@@ -55,18 +62,14 @@ export default class SlideContentComponent extends Component {
       );
 
       if (this.args.disabled) {
-        cancel(this.slideAnimationOptions);
+        cancelTask(this.destroyToken);
       }
     }
   }
 
   stopSlideAnimation() {
-    if (this.slideAnimationInitial) {
-      cancel(this.slideAnimationInitial);
-    }
-    if (this.slideAnimationOptions) {
-      cancel(this.slideAnimationOptions);
-    }
+    cancelTask(this.slideAnimationInitial);
+    cancelTask(this.destroyToken);
   }
 
   @action

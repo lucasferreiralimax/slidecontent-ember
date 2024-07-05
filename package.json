@@ -73,7 +73,8 @@
     "stylelint": "^16.6.1",
     "stylelint-config-standard-scss": "^13.1.0",
     "tracked-built-ins": "^3.3.0",
-    "webpack": "^5.92.1"
+    "webpack": "^5.92.1",
+    "ember-lifeline": "^7.0.0"
   },
   "engines": {
     "node": ">= 18"
