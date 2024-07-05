@@ -14,8 +14,7 @@
     <div class="slide-bullets">
       {{#each this.slides as |slide index|}}
         <button
-          class={{if (eq index this.activeSlideIndex) "bullet active" "bullet"}}
-          {{on "click" (fn this.bulletHandler index)}}
+          class={{if (eq index this.activeSlideIndex) "bullet active" "bullet"}} type="button" {{on "click" (fn this.bulletHandler index)}}
         ></button>
       {{/each}}
     </div>
