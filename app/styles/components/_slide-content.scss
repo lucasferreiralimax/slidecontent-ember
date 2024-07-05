@@ -95,3 +95,29 @@
     }
   }
 }
+
+.slide-bullets {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  z-index: 10;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .bullet {
+    width: 30px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 0 5px;
+    border: 2px solid #fff;
+    cursor: pointer;
+
+    &.active {
+      background-color: rgba(#444, 0.5);
+      cursor: default;
+    }
+  }
+}
